@@ -1,16 +1,25 @@
-def a():
-    try:
-        if 1==1:raise Exception
-    except Exception:
-        print(1)
-        raise Exception
-    finally:
-        print(4)
-        return 5
+class testcase(dict):
+    """"""
+    def __init__(self,cfg={}):
+        """Constructor for testcase"""
+        dict.__init__(self,cfg)
+        #self.cfg = cfg
 
-if __name__ == '__main__':
-    try:
-        a()
-        print(2)
-    except Exception:
-        print(3)
+    '''def __setitem__(self, key, value):
+        self.cfg[key] = value'''
+
+    def __getitem__(self, item):
+        return dict.__getitem__(self,item)
+        #return self.cfg[item]
+
+
+
+t = testcase()
+t['a'] = 1
+print(t['a'])
+print(t)
+
+a = dict()
+a['b'] = 1
+print(a['b'])
+print(a)
