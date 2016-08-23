@@ -1,4 +1,5 @@
-from xlwt import Workbook
+import requests
+import json
 
-Workbook
-
+res = requests.get('http://ip.taobao.com/service/getIpInfo.php','')
+print(res.text)

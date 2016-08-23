@@ -1,6 +1,4 @@
 import xlrd
-dict
-object
 
 def testcase_read_by_ecxel(testcasefile):
     worksheet = xlrd.open_workbook(testcasefile)
