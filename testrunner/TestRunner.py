@@ -3,7 +3,7 @@ import re
 from excelcaseparser import CaseParser
 from requestlib import HTTPRequestlib
 from Exception import TestCaseFailException
-from jsonparser import JsonParser
+from verifylib import VerifyLib
 
 class TestRuuner(object):
     """"""
@@ -51,29 +51,34 @@ class TestRuuner(object):
                 # 发送get请求
                 httprequest = HTTPRequestlib()
                 try:
-                    result = httprequest.get(testcase['URL'], testcase['IP'])
+                    result = httprequest.get('http://ip.taobao.com/service/getIpInfo.php', testcase)
 
                     if result.status_code != 200:
                         raise TestCaseFailException
 
-                    result_data = JsonParser().parser(result.text)
+                    #result_data = VerifyLib().json_parser(result.text)
+                    result_data = result.json()
                     if result_data['code'] == 1:
                         raise TestCaseFailException
 
                     case_pass += 1
+                    testcase['Pass'] = 'Y'
                     '''print('第%d条用例' % order, '状态码:', result.status_code, 'pass',
                           '服务器响应:', result_data)'''
                 except:
                     case_fail += 1
-                    if result.status_code != 200:
+                    testcase['Pass'] = 'N'
+                    '''if result.status_code != 200:
                         print('第%d条用例' % order,'状态码:',result.status_code,'fail',
                           '服务器无响应')
                     else:
                         print('第%d条用例' % order,'状态码:',result.status_code,'fail',
-                          '服务器响应:',result_data)
+                          '服务器响应:',result_data)'''
 
-            print('通过用例%d条'%case_pass,
-                  '失败用例%d条'%case_fail)
+                finally:
+                    testcase['actResult'] = result_data['data']
+                    print(testcase)
+
 
 
 

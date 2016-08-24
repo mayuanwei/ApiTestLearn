@@ -1,12 +1,14 @@
 import json
 
-class JsonParser(object):
+class VerifyLib(object):
     """"""
 
     def __init__(self):
         """Constructor for JsonParser"""
         object.__init__(self)
 
-    def parser(self,json_data):
+    def json_parser(self,json_data):
         dict_data = json.loads(json_data)
         return dict_data
+
+

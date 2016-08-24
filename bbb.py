@@ -1,25 +1,12 @@
-class testcase(dict):
-    """"""
-    def __init__(self,cfg={}):
-        """Constructor for testcase"""
-        dict.__init__(self,cfg)
-        #self.cfg = cfg
+import xlrd,xlwt
+from xlutils.copy import copy
 
-    '''def __setitem__(self, key, value):
-        self.cfg[key] = value'''
+def write(row,col,str):
+    rb = xlrd.open_workbook(r'C:\Program Files\Python35\test\demo.xls',formatting_info=True)
+    sht = rb.sheet_by_index(0)
+    wb = copy(sht)
+    #ws = wb.sheet_by_index(0)
+    wb.write(row,col,str)
+    sht.save(r'C:\Program Files\Python35\test\demo.xls')
 
-    def __getitem__(self, item):
-        return dict.__getitem__(self,item)
-        #return self.cfg[item]
-
-
-
-t = testcase()
-t['a'] = 1
-print(t['a'])
-print(t)
-
-a = dict()
-a['b'] = 1
-print(a['b'])
-print(a)
+write(1,1,'myw')

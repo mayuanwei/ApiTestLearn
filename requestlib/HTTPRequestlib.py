@@ -8,7 +8,6 @@ class HTTPRequestlib(object):
         object.__init__(self)'''
 
     def get(self,url,para):
-        para = 'ip='+para
         result = requests.get(url,para)
 
         return result

@@ -1,7 +1,7 @@
 from excelcaseparser import CaseParser
 from requestlib import HTTPRequestlib
 from Exception import TestCaseFailException
-from jsonparser import JsonParser
+from verifylib import JsonParser
 
 if __name__=='__main__':
     file = 'C:\\Program Files\\Python35\\test\\testcase_taobaoip.xlsx'
