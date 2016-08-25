@@ -4,6 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../ExcelReadAndWrite" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../ExcelReadAndWrite" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../InterfaceTest" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../TestSamples" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../TestSamples" vcs="Git" />
   </component>

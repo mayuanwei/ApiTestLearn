@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ApiTestLearn.iml" filepath="$PROJECT_DIR$/.idea/ApiTestLearn.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../ExcelReadAndWrite/.idea/ExcelReadAndWrite.iml" filepath="$PROJECT_DIR$/../ExcelReadAndWrite/.idea/ExcelReadAndWrite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../InterfaceTest/.idea/InterfaceTest.iml" filepath="$PROJECT_DIR$/../InterfaceTest/.idea/InterfaceTest.iml" />
     </modules>
   </component>
 </project>
