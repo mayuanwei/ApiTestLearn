@@ -1,5 +1,8 @@
-a=['x',1]
-s=str(a)
-print(s)
+import  aaa
 
-b={'key':'v'
+class XXX():
+    def x(self):
+        aaa.a()
+
+x = XXX()
+x.x()
