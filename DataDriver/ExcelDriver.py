@@ -1,6 +1,7 @@
 import xlrd
 import os
 import sys
+from configuration import filepath
 
 class Excel():
     def __init__(self,filepath):
@@ -23,8 +24,8 @@ class Excel():
             data[self.row[1]] = self.sht.cell_value(row,1)
             data[self.row[2]] = self.sht.cell_value(row,2)'''
             datalist.append(data)
-        print(datalist)
+        return datalist
 
-e = Excel('TestCase.xlsx')
-e.get_data()
+'''e = Excel(filepath+'TestCase.xlsx')
+e.get_data()'''
 

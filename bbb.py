@@ -11,22 +11,25 @@ def p(v):
 class Funcase(unittest.TestCase):
     errcount = []
     def setUp(self):
-        pass
+        self.l = []
     def tearDown(self):
+        #print(self.errcount)
         pass
 
-    def test_p(self):
-        print('test_p')
+    '''def test_p(self):
+        print('test_p')'''
 
     @data((2,3),(1,4))
     @unpack
     def test_mul(self,x,y):
         res = mul(x,y)
         try:
-            self.assertEqual(res,3)
+            #self.assertEqual(res,3)
+            self.assertIn('a1','abc')
         except:
             #p(self.errcount)
-            print('test fail')
+            self.errcount.append('a')
+            print(self.errcount,'test fail')
 
 def runner():
     suite = unittest.TestLoader().loadTestsFromTestCase(Funcase)
@@ -35,6 +38,10 @@ def runner():
     #unittest.TextTestRunner.run(suite)
     return suite
 
+def count():
+    print(123)
+
 if __name__=='__main__':
     unittest.main(defaultTest='runner')
+    #print(Funcase.errcount)
     #unittest.main()
