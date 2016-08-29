@@ -18,6 +18,7 @@ class Excel():
         data = {}
         for row in range(3,self.sht.nrows):
             data = {self.url[0]:self.url[1],
+                    self.row[0]:self.sht.cell_value(row,0),
                     self.row[1]:self.sht.cell_value(row,1),
                     self.row[2]:self.sht.cell_value(row,2)}
             '''data[self.url[0]] = self.url[1]
